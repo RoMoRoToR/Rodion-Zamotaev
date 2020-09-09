@@ -1,40 +1,41 @@
-package ikbo2519pr1;
-import java.lang.*;
+package ru.mirea.pr2;
 
 public class Ball {
-    private double Volume;
-    private String color;
+    private double x=0.0;
+    private double y=0.0;
+public Ball(double x, double y){
+    this.x=x;
+    this.y=y;
+}
+public Ball(){
+    x=1.0;
+    y=2.5;
+}
 
-    public Ball(double volume, String color) {
-        Volume = volume;
-        this.color = color;
+    public double getX() {
+        return x;
     }
 
-    public Ball(String color) {
-        this.color = color;
+    public void setX(double x) {
+        this.x = x;
     }
 
-    public double getVolume() {
-        return Volume;
+    public double getY() {
+        return y;
     }
 
-    public void setVolume(double volume) {
-        Volume = volume;
+    public void setY(double y) {
+        this.y = y;
     }
-
-    public String getColor() {
-        return color;
+    public void setXY(double X,double Y){
+    x=X;
+    y=Y;
     }
-
-    public void setColor(String color) {
-        this.color = color;
+    public void move(double xDisp, double yDisp){
+    x=x+xDisp;
+    y=y+yDisp;
     }
-
-    @Override
-    public String toString() {
-        return "Ball{" +
-                "Volume=" + Volume +
-                ", color='" + color + '\'' +
-                '}';
+    public String toString(){
+    return "X: "+this.x+" |Y:"+this.y;
     }
 }
